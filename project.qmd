@@ -1,25 +1,13 @@
 ---
 title: "A Year in the National Parks"
 subtitle: "A project proposal on visitation, seasons, and change"
+execute: 
+ echo: false
 format:
   html:
     toc: false
     page-layout: article
 ---
-
-## Project idea
-
-For my final project, I plan to study how visitation at U.S. national parks
-has changed over time and how seasonal patterns differ from park to park. I
-assembled three NPS annual visitation reports into one dataset covering
-1979–2025, with 16,095 park-year observations. The separate 2025 ranking
-report adds each park's rank and share of total visits.
-
-The variables I am most interested in are **park name**, **year**, and
-**recreation visits**. I will use them to compare parks and explore long-term
-changes in popularity. The annual report also includes other visitor-use
-statistics, such as visitor hours and overnight stays, which could help me
-compare different kinds of park use.
 
 ## Which park was most visited each year?
 

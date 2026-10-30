@@ -1,0 +1,136 @@
+---
+title: "A Year in the National Parks"
+subtitle: "A project proposal on visitation, seasons, and change"
+format:
+  html:
+    toc: false
+    page-layout: article
+---
+
+## Project idea
+
+For my final project, I plan to study how visitation at U.S. national parks
+has changed over time and how seasonal patterns differ from park to park. I
+assembled three NPS annual visitation reports into one dataset covering
+1979–2025, with 16,095 park-year observations. The separate 2025 ranking
+report adds each park's rank and share of total visits.
+
+The variables I am most interested in are **park name**, **year**, and
+**recreation visits**. I will use them to compare parks and explore long-term
+changes in popularity. The annual report also includes other visitor-use
+statistics, such as visitor hours and overnight stays, which could help me
+compare different kinds of park use.
+
+## Which park was most visited each year?
+
+Each small gray dot is one park's annual recreation visits. The red dots
+highlight the most-visited park in each year, and the red line connects those
+annual leaders. The pseudo-log scale keeps the many smaller parks visible
+alongside parks with millions of visits.
+
+```{r}
+#| label: fig-park-visitation-dots
+#| fig-cap: "Annual recreation visits for every park-year; red marks the most-visited park in each year."
+#| fig-width: 10
+#| fig-height: 7
+
+library(tidyverse)
+
+annual_visits <- read_csv(
+  "nps_annual_visits_1979_2025.csv",
+  show_col_types = FALSE
+)
+
+annual_leaders <- annual_visits |>
+  group_by(year) |>
+  slice_max(recreation_visits, n = 1, with_ties = FALSE) |>
+  ungroup()
+
+ggplot(annual_visits, aes(x = year, y = recreation_visits)) +
+  geom_point(
+    position = position_jitter(width = 0.18, height = 0, seed = 2026),
+    color = "#52738A",
+    alpha = 0.18,
+    size = 0.75
+  ) +
+  geom_line(
+    data = annual_leaders,
+    aes(group = 1),
+    color = "#C64F3D",
+    linewidth = 0.9,
+    alpha = 0.8
+  ) +
+  geom_point(
+    data = annual_leaders,
+    color = "#C64F3D",
+    size = 2.2
+  ) +
+  geom_label(
+    data = filter(annual_leaders, year == max(year)),
+    aes(label = park),
+    nudge_x = 1,
+    hjust = 0,
+    size = 3,
+    color = "#8E3328",
+    fill = "white",
+    label.size = 0
+  ) +
+  scale_x_continuous(
+    breaks = seq(1980, 2025, by = 5),
+    limits = c(1979, 2034)
+  ) +
+  scale_y_continuous(
+    trans = scales::transform_pseudo_log(sigma = 1),
+    breaks = c(0, 100000, 1000000, 5000000, 10000000, 20000000),
+    labels = scales::label_comma()
+  ) +
+  labs(
+    title = "The most-visited park in each year",
+    subtitle = "Every dot is a park-year observation, 1979–2025",
+    x = "Year",
+    y = "Annual recreation visits (pseudo-log scale)",
+    caption = paste0(
+      format(nrow(annual_visits), big.mark = ","),
+      " park-year dots; red dots and line show each year's leader. ",
+      "Reporting park counts vary by year. Source: NPS annual visitation reports."
+    )
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(face = "bold", color = "#17324D", size = 20),
+    plot.subtitle = element_text(color = "#526477"),
+    plot.caption = element_text(color = "#667085", hjust = 0),
+    panel.grid.minor = element_blank()
+  )
+```
+
+## Questions I hope to explore
+
+- Which parks have the most recreation visits, and how has that changed over
+  time? This plot focuses on annual recreation visits and highlights the
+  leading park in each year.
+- Which months tend to be busiest or quietest, and which parks have the
+  strongest seasonal swings? My current CSV files are annual, so I need
+  monthly data to answer this part.
+- Did visitation patterns shift in particular years? Monthly data could show
+  month-by-month changes, but would not identify visits on specific holidays.
+
+## Data sources
+
+- [NPS Visitor Use Statistics portal](https://irma.nps.gov/Stats/)
+- [NPS Visitor Use Statistics Dashboard](https://www.nps.gov/subjects/socialscience/visitor-use-statistics-dashboard.htm)
+
+The NPS dashboard describes the monthly series as beginning in 1979 and
+provides park-level and monthly or annual views. I will check the data
+definitions and limitations before interpreting comparisons.
+
+To study seasonal patterns, I should download a **monthly park-level
+visitation report** from the NPS portal, with park name or code, year, month,
+and recreation visits. Ideally it would cover 1979 through the most recent
+complete year. Monthly data can answer which months are busiest, but
+holiday-specific analysis would require daily visitation data, if available.
+
+The annual reports cover up to 20 years each, so I combined report periods
+1979–1998, 1999–2018, and 2019–2025 for the full historical view. The number
+of reporting park units changes over time, so comparisons describe the
+distribution among units reporting in each year.

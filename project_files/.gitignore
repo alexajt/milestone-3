@@ -1,0 +1,5 @@
+*
+!.gitignore
+!figure-html/
+figure-html/*
+!figure-html/fig-park-visitation-dots-1.png

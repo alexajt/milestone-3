@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Alexa Titherington">
 
-<title>A Year in the National Parks</title>
+<title>U.S. National Park Visitation</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -52,14 +53,20 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">A Year in the National Parks</h1>
-<p class="subtitle lead">A project proposal on visitation, seasons, and change</p>
+<h1 class="title">U.S. National Park Visitation</h1>
+<p class="subtitle lead">Which park drew the most recreation visits each year, 1979–2025?</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alexa Titherington </p>
+          </div>
+  </div>
     
   
     
@@ -70,30 +77,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="which-park-was-most-visited-each-year" class="level2">
-<h2 class="anchored" data-anchor-id="which-park-was-most-visited-each-year">Which park was most visited each year?</h2>
-<p>Each small gray dot is one park’s annual recreation visits. The red dots highlight the most-visited park in each year, and the red line connects those annual leaders. The pseudo-log scale keeps the many smaller parks visible alongside parks with millions of visits.</p>
+<p>Each small gray dot represents one park’s annual recreation visits. The red dots and line show which park had the most visits each year.</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.2.1     ✔ readr     2.2.0
-✔ forcats   1.0.1     ✔ stringr   1.6.0
-✔ ggplot2   4.0.3     ✔ tibble    3.3.1
-✔ lubridate 1.9.5     ✔ tidyr     1.3.2
-✔ purrr     1.2.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The `label.size` argument of `geom_label()` is deprecated as of ggplot2 3.5.0.
-ℹ Please use the `linewidth` argument instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 144 rows containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <div id="fig-park-visitation-dots" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -107,25 +92,6 @@ Figure&nbsp;1: Annual recreation visits for every park-year; red marks the most-
 </div>
 </div>
 </div>
-</section>
-<section id="questions-i-hope-to-explore" class="level2">
-<h2 class="anchored" data-anchor-id="questions-i-hope-to-explore">Questions I hope to explore</h2>
-<ul>
-<li>Which parks have the most recreation visits, and how has that changed over time? This plot focuses on annual recreation visits and highlights the leading park in each year.</li>
-<li>Which months tend to be busiest or quietest, and which parks have the strongest seasonal swings? My current CSV files are annual, so I need monthly data to answer this part.</li>
-<li>Did visitation patterns shift in particular years? Monthly data could show month-by-month changes, but would not identify visits on specific holidays.</li>
-</ul>
-</section>
-<section id="data-sources" class="level2">
-<h2 class="anchored" data-anchor-id="data-sources">Data sources</h2>
-<ul>
-<li><a href="https://irma.nps.gov/Stats/">NPS Visitor Use Statistics portal</a></li>
-<li><a href="https://www.nps.gov/subjects/socialscience/visitor-use-statistics-dashboard.htm">NPS Visitor Use Statistics Dashboard</a></li>
-</ul>
-<p>The NPS dashboard describes the monthly series as beginning in 1979 and provides park-level and monthly or annual views. I will check the data definitions and limitations before interpreting comparisons.</p>
-<p>To study seasonal patterns, I should download a <strong>monthly park-level visitation report</strong> from the NPS portal, with park name or code, year, month, and recreation visits. Ideally it would cover 1979 through the most recent complete year. Monthly data can answer which months are busiest, but holiday-specific analysis would require daily visitation data, if available.</p>
-<p>The annual reports cover up to 20 years each, so I combined report periods 1979–1998, 1999–2018, and 2019–2025 for the full historical view. The number of reporting park units changes over time, so comparisons describe the distribution among units reporting in each year.</p>
-</section>
 
 </main>
 <!-- /main column -->

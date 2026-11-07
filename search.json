@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About This Project",
+    "section": "",
+    "text": "A Year in the National Parks explores historical visitation patterns, seasonal swings, and long-term growth across the United States National Park System from 1979 to 2025."
+  },
+  {
+    "objectID": "about.html#project-overview",
+    "href": "about.html#project-overview",
+    "title": "About This Project",
+    "section": "",
+    "text": "A Year in the National Parks explores historical visitation patterns, seasonal swings, and long-term growth across the United States National Park System from 1979 to 2025."
+  },
+  {
+    "objectID": "about.html#data-sources",
+    "href": "about.html#data-sources",
+    "title": "About This Project",
+    "section": "Data Sources",
+    "text": "Data Sources\n\nNPS Visitor Use Statistics Portal\nNPS Visitor Use Statistics Dashboard\n\nThe dataset rendered on the homepage (nps_annual_visits_1979_2025.csv) combines historical National Park Service annual visitation reports across three reporting periods (1979–1998, 1999–2018, and 2019–2025), totaling 16,095 park-year observations."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "A Year in the National Parks",
+    "section": "",
+    "text": "Every point in the scatterplot below represents one National Park Service unit in a single year between 1979 and 2025 (16,095 park-year observations in total). Grouping these observations by Park Unit Type reveals a surprising pattern: while flagship National Parks draw huge headlines, Recreation Areas, Seashores & Parkways actually hold the highest median attendance (~1.16 million visits per year), whereas Historic Sites and National Monuments make up the vast majority of locations with smaller, steadier crowds (~110,000 visits per year).\n\n\n\n\n\n\n\n\nFigure 1: Annual recreation visits across 16,095 park-year observations (1979–2025), colored by NPS unit category. Solid lines track the median attendance for each category each year."
+  },
+  {
+    "objectID": "index.html#does-park-designation-drive-crowd-size",
+    "href": "index.html#does-park-designation-drive-crowd-size",
+    "title": "A Year in the National Parks",
+    "section": "",
+    "text": "Every point in the scatterplot below represents one National Park Service unit in a single year between 1979 and 2025 (16,095 park-year observations in total). Grouping these observations by Park Unit Type reveals a surprising pattern: while flagship National Parks draw huge headlines, Recreation Areas, Seashores & Parkways actually hold the highest median attendance (~1.16 million visits per year), whereas Historic Sites and National Monuments make up the vast majority of locations with smaller, steadier crowds (~110,000 visits per year).\n\n\n\n\n\n\n\n\nFigure 1: Annual recreation visits across 16,095 park-year observations (1979–2025), colored by NPS unit category. Solid lines track the median attendance for each category each year."
+  },
+  {
+    "objectID": "index.html#key-takeaways-from-the-data",
+    "href": "index.html#key-takeaways-from-the-data",
+    "title": "A Year in the National Parks",
+    "section": "Key Takeaways from the Data",
+    "text": "Key Takeaways from the Data\n\nRecreation Areas, Seashores & Parkways lead in median crowd size: With a median of 1.16 million annual visits, scenic roadways, beaches, and urban recreation areas consistently draw larger typical crowds than remote parks.\nNational Parks & Preserves show steady multi-decade growth: Across 3,394 park-year observations, flagship National Parks have grown to a median of over 537,000 annual visits, with top units exceeding 10 million visitors.\nHistoric Sites & National Monuments form the backbone of the system: Over two-thirds of all park-year observations (10,808 out of 16,095) belong to historical parks, battlefields, memorials, and monuments, which typically welcome around 105,000 to 123,000 visitors per year."
+  }
+]

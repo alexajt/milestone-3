@@ -1,0 +1,14 @@
+---
+title: "About This Project"
+---
+
+## Project Overview
+
+**A Year in the National Parks** explores historical visitation patterns, seasonal swings, and long-term growth across the United States National Park System from 1979 to 2025.
+
+## Data Sources
+
+- [NPS Visitor Use Statistics Portal](https://irma.nps.gov/Stats/)
+- [NPS Visitor Use Statistics Dashboard](https://www.nps.gov/subjects/socialscience/visitor-use-statistics-dashboard.htm)
+
+The dataset rendered on the homepage (`nps_annual_visits_1979_2025.csv`) combines historical National Park Service annual visitation reports across three reporting periods (1979–1998, 1999–2018, and 2019–2025), totaling **16,095 park-year observations**.

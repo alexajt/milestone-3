@@ -1,0 +1,19 @@
+project:
+  type: website
+  render:
+    - index.qmd
+    - about.qmd
+
+website:
+  title: "A Year in the National Parks"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+
+format:
+  html:
+    theme: sandstone
+    toc: true
